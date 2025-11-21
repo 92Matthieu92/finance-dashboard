@@ -1,7 +1,7 @@
 import streamlit as st
-from src.data_fetching import get_realtime_data
-from src.strategies import buy_and_hold, momentum_strategy
-from src.metrics import sharpe_ratio, max_drawdown
+from modules.quant_a.data_fetching import get_realtime_data
+from modules.quant_a.strategies import buy_and_hold, momentum_strategy
+from modules.quant_a.metrics import sharpe_ratio, max_drawdown
 import plotly.graph_objects as go
 
 
@@ -40,5 +40,9 @@ def run_single_asset_dashboard():
 
     # Metrics
     st.subheader("Indicateurs de performance")
-    st.write("📌 **Sharpe Ratio** :", round(sharpe_ratio(df), 3))
+    sr = sharpe_ratio(df)
+    if sr is None:
+        st.warning("Sharpe Ratio non disponible (pas assez de données)")
+    else:
+        st.write("📈 **Sharpe Ratio** :", round(sr, 3))    
     st.write("📌 **Max Drawdown** :", round(max_drawdown(df), 3))
