@@ -4,6 +4,7 @@ from src.strategies import buy_and_hold, momentum_strategy
 from src.metrics import sharpe_ratio, max_drawdown
 import plotly.graph_objects as go
 
+
 def run_single_asset_dashboard():
     st.title("Analyse CAC 40 – Module Quant A")
 
