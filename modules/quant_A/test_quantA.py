@@ -1,4 +1,4 @@
-from module.quant_A import QuantAEngine
+from modules.quant_A import QuantAEngine
 
 def main():
     print("=== TEST QUANT A ENGINE ===")
