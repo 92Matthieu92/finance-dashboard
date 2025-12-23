@@ -99,9 +99,9 @@ def main():
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(md_content)
         
-        print(f"✅ Report successfully generated: {filepath}")
+        print(f"Report successfully generated: {filepath}")
     else:
-        print("❌ Failed to generate report (no data).")
+        print("Failed to generate report (no data).")
 
 if __name__ == "__main__":
     main()

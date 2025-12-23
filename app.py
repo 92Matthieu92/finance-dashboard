@@ -88,7 +88,7 @@ st.markdown("""
 
 
 # --- NAVIGATION ET GLOBAL REFRESH ---
-st.sidebar.title("🏛️ Navigation")
+st.sidebar.title("Navigation")
 app_mode = st.sidebar.radio("Sélectionner un Module", ["Single Asset", "Portfolio Allocator"])
 st.sidebar.markdown("---")
 
@@ -167,10 +167,6 @@ def run_quant_a():
                 st.error(f"Erreur d'exécution de Quant A : {e}")
 
 
-# ==============================================================================
-# 🔵 MODULE B : PORTFOLIO OPTIMIZER (Ton travail)
-# ... (Le reste du code de run_quant_b reste inchangé)
-# ==============================================================================
 def run_quant_b():
     st.title("⚖️ Portfolio Optimizer (Multi-Asset)")
     
@@ -198,7 +194,7 @@ def run_quant_b():
         with st.status("Calculs Quantitatifs en cours...", expanded=True) as status:
             
             # A. Chargement Data
-            st.write("📥 Récupération des données marché...")
+            st.write("Récupération des données marché...")
             dm = AssetDataManager(selected_assets, period=period_b)
             _, returns = dm.fetch_data()
             
@@ -210,7 +206,7 @@ def run_quant_b():
             engine = PortfolioEngine(returns)
             optimizer = PortfolioOptimizer(engine)
             
-            st.write(f"🚀 Lancement de 5000 simulations Monte Carlo | Max Poids: {MAX_WEIGHT_LIMIT:.0%}...")
+            st.write(f"Lancement de 5000 simulations Monte Carlo | Max Poids: {MAX_WEIGHT_LIMIT:.0%}...")
             results = optimizer.run_monte_carlo_simulation(5000, apply_constraints=use_constraints, max_weight=MAX_WEIGHT_LIMIT)
             
             if not results:
@@ -273,7 +269,7 @@ def run_quant_b():
         st.markdown("---")
         st.subheader("Backtest et Analyse de Risque")
         
-        tab1, tab2 = st.tabs(["📈 Courbe de Performance", "🛡️ Risque Avancé"])
+        tab1, tab2 = st.tabs(["Courbe de Performance", "Risque Avancé"])
         
         with tab1:
             df_norm = engine.get_normalized_prices(best_port['weights'])
