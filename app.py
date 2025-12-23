@@ -103,7 +103,7 @@ if time.time() - st.session_state.last_refresh > (REFRESH_RATE * 60):
     st.rerun()
     
 def run_quant_a():
-    st.title("🔎 Single Asset Analysis")
+    st.title("Single Asset Analysis")
     st.caption(f"Dernière mise à jour: {time.strftime('%H:%M:%S')}")
     
     # 1. Inputs
@@ -168,7 +168,7 @@ def run_quant_a():
 
 
 def run_quant_b():
-    st.title("⚖️ Portfolio Optimizer (Multi-Asset)")
+    st.title("Portfolio Optimizer (Multi-Asset)")
     
     # 1. Inputs Latéraux
     st.sidebar.subheader("Univers d'Investissement")
