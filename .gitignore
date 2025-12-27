@@ -75,3 +75,9 @@ docs/_build/
 
 # Windows
 Thumbs.db
+
+# Fichiers générés automatiquement
+reports/
+cron_log.txt
+logs.txt
+__pycache__/
